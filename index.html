@@ -25,15 +25,15 @@
 
 <script>
 
-let canvas = document.getElementById('canvas'); // das wir auf die seite zu greifen können 
+let canvas = document.getElementById('canvas'); // damit wir auf die Seite zu greifen können 
 let ctx = canvas.getContext('2d');
 
-let rows = 20; // das ist wei gross das spielfeld ist 20*20
+let rows = 20; // definiert die Grösse des Spielfeld 20*20
 let cols = 20;
-let cellWidth; // breite eines kästchens 
-let cellHeight; // höhe eines kästchen 
+let cellWidth; // breite eines Kästchens 
+let cellHeight; // höhe eines Kästchen 
 
-// Spielfeld grösse automatisch anpassen , dammit es auch auf den Handy geht
+// Spielfeld Grösse automatisch anpassen , damit es auch auf dem Handy funktioniert
 function resizeCanvas() {
     const maxSize = 700; // maximale Größe des Spielfeldes
     const size = Math.min(window.innerWidth * 0.95, window.innerHeight * 0.95, maxSize); // Größe an Bildschirm anpassen
@@ -57,12 +57,12 @@ let score = 0;
 let highscore = localStorage.getItem('highscore') || 0; // auktuelle Punktzahl welche du hast 
 
 // Start
-placeFood();//placeFood() → setzt die Frucht zufällig auf das Spielfeld
-document.addEventListener('keydown', keyDown);//document.addEventListener('keydown', keyDown) → hört auf Pfeiltasten, damit du die Schlangesteuern kannst.
-setInterval(gameLoop, 250);//setInterval(gameLoop, 200) → ruft alle 200 Millisekunden die Hauptfunktion gameLoop() auf, damit die Schlange sich bewegt und das Spiel weiterläuft.
-draw();//draw() → zeichnet die Schlange, die Frucht und den Score auf den Canvas.
+placeFood();//setzt die Frucht zufällig auf das Spielfeld
+document.addEventListener('keydown', keyDown); //hört auf Pfeiltasten, damit du die Schlange steuern kannst.
+setInterval(gameLoop, 250);// ruft alle 200 Millisekunden die Hauptfunktion gameLoop() auf, damit die Schlange sich bewegt und das Spiel weiterläuft.
+draw();//zeichnet die Schlange, die Frucht und den Score auf den Canvas.
 
-//Für Handy Touchscreen - "Dieser Abschnittt wurde mit AI hilfe generiert"
+//Für Handy Touchscreen - "Dieser Abschnittt wurde mit AI Hilfe generiert"
 let touchStartX = 0;
 let touchStartY = 0;
 
